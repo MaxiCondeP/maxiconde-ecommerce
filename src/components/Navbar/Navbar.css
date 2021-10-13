@@ -4,10 +4,13 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
     top: 0; 
-    background-color: #53555a; 
+    background-color: #884EA0 ; 
 
+}
+
+.menuContainer h2{
+    color: #F4D03F;
 }
 
 .menu{
@@ -27,5 +30,6 @@
 
 .menu li a{
     text-decoration: none ;
-    color: white;
+    color: #F4D03F;
+    font-style: bold;
 }
