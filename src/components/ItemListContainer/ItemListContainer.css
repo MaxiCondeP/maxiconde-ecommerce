@@ -1,0 +1,15 @@
+
+.itemContainer{
+    display:flex;
+    width: 90%;
+    align-items: flex-start;
+    margin:1rem;
+
+}
+.message{
+
+    padding:1rem;
+    font-style: italic;
+    border-bottom: solid;
+    border-color: gray;
+}

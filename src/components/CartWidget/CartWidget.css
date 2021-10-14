@@ -1,0 +1,15 @@
+.iconoCartContainer{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.iconoCart{
+    width: 2rem;
+    cursor: pointer;
+}
+
+p{
+    color: #F4D03F;
+}
