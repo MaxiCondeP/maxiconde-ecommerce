@@ -1,0 +1,34 @@
+.itemContainer{
+    height:29rem;
+    display: grid;
+    grid-template-rows: 60% 40%;
+    border: 0.25rem solid #884EA0;
+    width: 18rem;
+}
+
+
+.itemTop{
+    background-color: #F4D03F;
+    overflow: hidden;
+}
+
+img{
+    width:100%;
+
+}
+
+.textPrecio{
+   display: block;
+}
+
+itemBottom{
+    width: 100%;  
+}
+
+h2{
+    font-size: 1rem;
+}
+
+h3{
+    font-size: 0.8rem;
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "id": "001",
+        "titulo": "El amor después del amor",
+        "artista": "Fito Páez",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/155936.jpg",
+        "stock": "5",
+        "precio":"2500"
+    },
+    {
+        "id": "002",
+        "titulo": "Parte de la religión",
+        "artista": "Charly García",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/599687.jpg",
+        "stock": "5",
+        "precio":"2500"
+    },
+    {
+        "id": "003",
+        "titulo": "Division bell",
+        "artista": "Pink Floyd",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/626875.jpg",
+        "stock": "5",
+        "precio":"4500"
+    },
+    {
+        "id": "004",
+        "titulo": "Zeppelin I",
+        "artista": "Led Zeppel",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/580211.jpg",
+        "stock": "5",
+        "precio":"2500"
+    },
+    {
+        "id": "005",
+        "titulo": "Parte de la religión",
+        "artista": "Charly García",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/599687.jpg",
+        "stock": "5",
+        "precio":"2500"
+    },
+    {
+        "id": "006",
+        "titulo": "Division bell",
+        "artista": "Pink Floyd",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/626875.jpg",
+        "stock": "5",
+        "precio":"3500"
+    },
+    {
+        "id": "007",
+        "titulo": "Zeppelin I",
+        "artista": "Led Zeppel",
+        "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/580211.jpg",
+        "stock": "5",
+        "precio":"2500"
+    }
+]

@@ -1,12 +1,17 @@
 import React from "react";
 import './ItemListContainer.css'
+import ItemList from '../ItemList/ItemList';
 
-export const ItemListContainer = ({message, children}) =>{
+
+export const ItemListContainer = ()=>{
+
+
+
     return(
-        <div className= "itemContainer">
-            <span className="message">{message}</span>
-            {children}
-        </div>
+        <>
+            {/* <span className="message">{message}</span> */}
+            <ItemList/>
+        </>
 
 
     );

@@ -1,14 +1,6 @@
 .countContainer{
-    height: 10rem;
     display: grid;
-    grid-template-rows: 60% 20% 20%;
-    border: 0.25rem solid #884EA0;
-    width: 10rem;
+    height: 3rem;
+    margin: 0.1rem
 }
 
-.countTop{
-    padding:1rem;
-    background-color: #F4D03F;
-    border-bottom:0.25rem solid #884EA0;
-
-}
