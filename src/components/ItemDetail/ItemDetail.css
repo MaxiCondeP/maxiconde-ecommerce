@@ -1,0 +1,29 @@
+.itemDetail{
+    display:grid;
+    width: 90%;
+    grid-template-columns: 40% 60%;
+    border: solid black 2px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.txtDescripcion{
+    padding:0 3rem 0 3rem;
+    color: black;
+    text-align: left;
+}
+
+.itemTitulo{
+font-size: 2rem;
+}
+
+
+.itemArtista{
+    font-size: 1.5rem;  
+}
+
+.itemPrecio{
+    padding-left:3rem;
+    text-align: left;
+    font-size: 2rem;
+}

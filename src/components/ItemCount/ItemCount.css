@@ -1,6 +1,12 @@
 .countContainer{
     display: grid;
     height: 3rem;
-    margin: 0.1rem
+    margin: 0.1rem;
+   justify-content: space-around;
+}
+
+
+.counterButton{
+    width: 10rem;
 }
 

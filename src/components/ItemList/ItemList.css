@@ -1,6 +1,6 @@
 .itemList{
     display: grid;
-    padding: 4rem; 
+    padding: 5%; 
     grid-template-columns: 30% 30% 30%;
-    width: 100%;
+    width: 90%;
 }

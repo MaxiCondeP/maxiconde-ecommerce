@@ -20,7 +20,8 @@ export const ItemList = () => {
             }, 2000);
         });
 
-        useEffect(() => {  ///Traigo la lista, o capturo el posible error mostrando el msj del reject de  la promesa
+        useEffect(() => {
+ ///Traigo la lista, o capturo el posible error mostrando el msj del reject de  la promesa
             traerLista(ProductosServidor)
                 .then((res) =>  setProductos(res))
                 .catch((err) => console.log(err));
