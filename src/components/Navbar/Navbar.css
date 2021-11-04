@@ -9,12 +9,13 @@
     justify-content: space-between;
     align-items: center;
     top: 0; 
-    background-color: #884EA0 ; 
+    /* background-color: #884EA0 ;  */
 
 }
 
 .menuContainer h2{
     color: #F4D03F;
+    font-size: 2rem;
 }
 
 .menu{
@@ -29,6 +30,7 @@
     padding: 0 1rem; 
     margin:  0 1rem; 
     list-style: none ;
+    font-size: 1.5rem;
     
 }
 
@@ -36,4 +38,5 @@
     text-decoration: none ;
     color: #F4D03F;
     font-style: bold;
+    
 }

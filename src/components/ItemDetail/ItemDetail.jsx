@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import "./ItemDetail.css";
 
 export  const ItemDetail =({producto, children})=>{

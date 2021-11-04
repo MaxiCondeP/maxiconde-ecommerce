@@ -8,7 +8,7 @@ import { useParams } from "react-router";
 
 export const ItemDetailCointainer = () => {
 
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState();
     
     const {id}=useParams();
 
@@ -27,9 +27,10 @@ export const ItemDetailCointainer = () => {
       useEffect(() => {
 ///Traigo la lista, o capturo el posible error mostrando el msj del reject de  la promesa
           traerLista(ProductosServidor)
-              .then((res) =>  setProducto(res.filter((produ)=> produ.id===id))) //filto para que solo muestre el id pasado por param
+              //.then((res) =>  setProducto(res.filter((produ)=> produ.id===id))) //filto para que solo muestre el id pasado por param
+              .then((res) =>  setProducto(res.find((produ)=> produ.id === id)))
               .catch((err) => console.log(err));
-      }, []);
+      }, [id]);
 
 
       //Logica de ItemCount que paso como children a cada Item
@@ -46,10 +47,9 @@ export const ItemDetailCointainer = () => {
     return(
         //renderizo el producto obtenido
         <div className="itemDetailContainer">
-            {producto.length
-            ?producto.map((prod)=>(
-                <ItemDetail producto={prod} key={prod.id} children={<ItemCount stock={prod.stock} initial="1" onAdd={onAdd}/>}/>
-            )):"Cargando..."}
+            {producto
+            ?(<ItemDetail producto={producto} key={producto.id} children={<ItemCount stock={producto.stock} initial="1" onAdd={onAdd}/>}/>
+            ):"Cargando..."}
         </div>
     );
 

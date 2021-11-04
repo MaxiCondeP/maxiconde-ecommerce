@@ -27,7 +27,7 @@ export const ItemList = () => {
         useEffect(() => {
  ///Traigo la lista, o capturo el posible error mostrando el msj del reject de  la promesa
             traerLista(ProductosServidor)
-                .then((res) =>  setProductos(categoria?res.filter((produ)=> produ.categoria==categoria): res))
+                .then((res) =>  setProductos(categoria?res.filter((produ)=> produ.categoria===categoria): res))
                 .catch((err) => console.log(err));
         }, [categoria]);
   

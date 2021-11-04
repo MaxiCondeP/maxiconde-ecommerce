@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom"; 
 import "./Item.css";
 
@@ -6,7 +5,7 @@ export const Item = ({producto, children}) => {
     return (
         <div className="itemContainer">
             <div className="itemTop">
-                <img src= {producto.img} />
+                <img src= {producto.img}  alt={`Tapa ${producto.titulo}`}/>
             </div>
             <div className="itemBottom">
                 <h2>{producto.titulo}</h2>

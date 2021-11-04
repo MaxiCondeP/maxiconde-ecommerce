@@ -3,7 +3,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { ItemDetailCointainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Navbar } from './components/Navbar/Navbar'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import { ItemDetail } from './components/ItemDetail/ItemDetail';
+
 
 
 function App() {

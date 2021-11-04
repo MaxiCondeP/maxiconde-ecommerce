@@ -5,11 +5,12 @@
     border: 0.25rem solid #884EA0;
     width: 18rem;
     padding:0.5rem;
+    color: white;
 }
 
 
 .itemTop{
-    background-color: #F4D03F;
+    /* background-color: #F4D03F; */
     overflow: hidden;
 }
 
