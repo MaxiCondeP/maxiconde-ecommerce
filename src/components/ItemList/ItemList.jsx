@@ -3,10 +3,14 @@ import Item from "../Item/Item";
 import ItemCount from "../ItemCount/ItemCount";
 import ProductosServidor from "../../productos.json"
 import "./ItemList.css"
+import { useParams } from "react-router";
 
 export const ItemList = () => {
 
     const [productos, setProductos] = useState([]);
+    const {categoria}= useParams();
+
+  
 
     //traigo la lista de productos con una promesa, y un delay de 2segundos
     const traerLista = (lista) => 
@@ -23,9 +27,9 @@ export const ItemList = () => {
         useEffect(() => {
  ///Traigo la lista, o capturo el posible error mostrando el msj del reject de  la promesa
             traerLista(ProductosServidor)
-                .then((res) =>  setProductos(res))
+                .then((res) =>  setProductos(categoria?res.filter((produ)=> produ.categoria==categoria): res))
                 .catch((err) => console.log(err));
-        }, []);
+        }, [categoria]);
   
 
 //Logica de ItemCount que paso como children a cada Item

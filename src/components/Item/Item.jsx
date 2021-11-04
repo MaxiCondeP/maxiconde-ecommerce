@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; 
 import "./Item.css";
 
 export const Item = ({producto, children}) => {
@@ -11,7 +12,10 @@ export const Item = ({producto, children}) => {
                 <h2>{producto.titulo}</h2>
                 <h3>{producto.artista}</h3>
                 <span className="textPrecio">${producto.precio}</span>
+                {/* Link a ver detalle de cada producto */}
+                <Link to={`/producto/${producto.id}`}>
                 <button>Ver detalles</button>
+                </Link>
                 {children}
             </div>
         </div>

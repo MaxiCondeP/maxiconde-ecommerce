@@ -3,11 +3,14 @@ import ProductosServidor from "../../productos.json"
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetailContainer.css"
+import { useParams } from "react-router";
 
 
-export const ItemDetailCointainer = ({id}) => {
+export const ItemDetailCointainer = () => {
 
     const [producto, setProducto] = useState([]);
+    
+    const {id}=useParams();
 
       //traigo la lista de productos con una promesa, y un delay de 2segundos
       const traerLista = (lista) => 

@@ -9,7 +9,6 @@ export const ItemListContainer = ()=>{
 
     return(
         <>
-            {/* <span className="message">{message}</span> */}
             <ItemList/>
         </>
 

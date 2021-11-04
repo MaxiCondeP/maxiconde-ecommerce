@@ -5,7 +5,10 @@
         "artista": "Fito Páez",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/155936.jpg",
         "stock": "5",
-        "precio":"2500"
+        "precio":"2500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"nacionales"
+        
     },
     {
         "id": "002",
@@ -14,7 +17,8 @@
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/599687.jpg",
         "stock": "5",
         "precio":"2500",
-        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music"
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"nacionales"
     },
     {
         "id": "003",
@@ -22,7 +26,9 @@
         "artista": "Pink Floyd",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/626875.jpg",
         "stock": "5",
-        "precio":"4500"
+        "precio":"4500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"importados"
     },
     {
         "id": "004",
@@ -30,7 +36,9 @@
         "artista": "Led Zeppelin",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/580211.jpg",
         "stock": "5",
-        "precio":"2500"
+        "precio":"2500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"importados"
     },
     {
         "id": "005",
@@ -38,7 +46,10 @@
         "artista": "Charly García",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/599687.jpg",
         "stock": "5",
-        "precio":"2500"
+        "precio":"2500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"nacionales"
+
     },
     {
         "id": "006",
@@ -46,7 +57,9 @@
         "artista": "Pink Floyd",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/626875.jpg",
         "stock": "5",
-        "precio":"3500"
+        "precio":"3500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"importados"
     },
     {
         "id": "007",
@@ -54,6 +67,8 @@
         "artista": "Led Zeppelin",
         "img": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/580211.jpg",
         "stock": "5",
-        "precio":"2500"
+        "precio":"2500",
+        "descripcion":"Parte de la Religión es el cuarto álbum de estudio en solitario del músico argentino Charly García. Fue producido por García junto a Joe Blaney y fue lanzado al mercado en 1987 por las empresas discográficas Columbia y Sony Music",
+        "categoria":"importados"
     }
 ]

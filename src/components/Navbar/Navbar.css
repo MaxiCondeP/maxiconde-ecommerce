@@ -1,3 +1,7 @@
+*{
+    text-decoration: none;
+}
+
 .menuContainer{
     width: 95%;
     display: flex;

@@ -21,9 +21,16 @@ function App() {
 
           <Route exact path="/">
 
-            {/* Le paso el param del id a mostrar de manera provisora */}
-            <ItemDetailCointainer id="002"/>
             <ItemListContainer />
+          </Route>
+
+          <Route exact path="/categoria/:categoria">
+            <ItemListContainer />
+          </Route>
+
+          <Route exact path="/producto/:id">
+            {/* Le paso el param del id a mostrar*/}
+            <ItemDetailCointainer />
           </Route>
 
         </Switch>
