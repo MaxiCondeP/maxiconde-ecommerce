@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
-import ItemCount from "../ItemCount/ItemCount";
 import ProductosServidor from "../../productos.json"
 import "./ItemList.css"
 import { useParams } from "react-router";
@@ -32,13 +31,6 @@ export const ItemList = () => {
         }, [categoria]);
   
 
-//Logica de ItemCount que paso como children a cada Item
-        const[cantidad, setCantidad]=useState(0);
-    //Función que luego almacenará la cantidad requerida de cada item
-    const onAdd=(counter)=>{
-        setCantidad(counter);
-        console.log(counter);
-    }
         
 
     return (
@@ -46,7 +38,7 @@ export const ItemList = () => {
             {/* Renderizo los productos desde el json */}
             {productos.length
                 ? productos.map((producto) => (
-                    <Item producto={producto} key={producto.id} children={<ItemCount stock={producto.stock} initial="1" onAdd={onAdd}/>}/>
+                    <Item producto={producto} key={producto.id}/>
                 )):"Cargando..."}
 
         </div>

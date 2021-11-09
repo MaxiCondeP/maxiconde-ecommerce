@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductosServidor from "../../productos.json"
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetailContainer.css"
 import { useParams } from "react-router";
 
@@ -33,14 +32,7 @@ export const ItemDetailCointainer = () => {
       }, [id]);
 
 
-      //Logica de ItemCount que paso como children a cada Item
-      const[cantidad, setCantidad]=useState(0);
-      //Función que luego almacenará la cantidad requerida de cada item
-      const onAdd=(counter)=>{
-          setCantidad(counter);
-          console.log(counter);
-      }
-
+  
      
 
 
@@ -48,7 +40,7 @@ export const ItemDetailCointainer = () => {
         //renderizo el producto obtenido
         <div className="itemDetailContainer">
             {producto
-            ?(<ItemDetail producto={producto} key={producto.id} children={<ItemCount stock={producto.stock} initial="1" onAdd={onAdd}/>}/>
+            ?(<ItemDetail producto={producto} key={producto.id}/>
             ):"Cargando..."}
         </div>
     );
