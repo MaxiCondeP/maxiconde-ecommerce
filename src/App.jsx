@@ -3,7 +3,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { ItemDetailCointainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Navbar } from './components/Navbar/Navbar'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import { cartContext } from "../src/contexts/cartContext"
+import { CartProvider } from "../src/contexts/cartContext"
 
 
 
@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <cartContext.Provider value={[]}>
+      <CartProvider>
       <div className="App">
 
         <BrowserRouter>
@@ -37,9 +37,8 @@ function App() {
 
           </Switch>
         </BrowserRouter>
-
       </div>
-    </ cartContext.Provider>
+      </CartProvider>
 
   );
 }

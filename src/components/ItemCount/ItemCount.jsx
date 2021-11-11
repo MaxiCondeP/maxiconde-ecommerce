@@ -1,27 +1,25 @@
-import React, { useState } from "react";
 import "./ItemCount.css";
 
 
-export const ItemCount = ({ stock, initial, onAdd}) => {
-
-    //Parseo el initial a int, porque sino lo toma como string
-    const [counter, setCounter] = useState(parseInt(initial));
+export const ItemCount = ({item, stock, cantidad, initial, onAdd,onIncrement, onRemove}) => {
 
 
-    //valido que sea menor a stock para sumar   
-    const onIncrement = () => { if (counter < stock) setCounter(counter + 1); }
 
-    //valido que el nro no sea menor a uno, ya que no se puede comprar menos de un producto
-    const onRemove = () => { if (counter > 1) setCounter(counter - 1); }
+
+    // //valido que sea menor a stock para sumar   
+    // const onIncrement = () => { if (counter < stock) setCounter(counter + 1); }
+
+    // //valido que el nro no sea menor a uno, ya que no se puede comprar menos de un producto
+    // const onRemove = () => { if (counter > 1) setCounter(counter - 1); }
 
     return (
         <div className="countContainer">
             <div className="countBottom">
-                <button onClick={onRemove}>-</button>
-                <span>{counter}</span>
-                <button onClick={onIncrement}>+</button>
+                <button onClick={()=>onRemove({cantidad,stock})}>-</button>
+                <span>{cantidad}</span>
+                <button onClick={()=>onIncrement({cantidad,stock})}>+</button>
             </div>
-            <button className="counterButton" onClick={()=>onAdd(counter)}>Agregar al carrito</button>
+            <button className="counterButton" onClick={()=>onAdd({item, cantidad})}>Agregar al carrito</button>
         </div>
     );
 
