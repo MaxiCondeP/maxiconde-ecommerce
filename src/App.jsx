@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-      <CartProvider>
+    <CartProvider>
       <div className="App">
 
         <BrowserRouter>
@@ -38,7 +38,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
-      </CartProvider>
+    </CartProvider>
 
   );
 }

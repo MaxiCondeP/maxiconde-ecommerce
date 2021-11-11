@@ -1,7 +1,7 @@
 import "./ItemCount.css";
 
 
-export const ItemCount = ({item, stock, cantidad, initial, onAdd,onIncrement, onRemove}) => {
+export const ItemCount = ({ item, stock, cantidad, initial, onAdd, onIncrement, onRemove }) => {
 
 
 
@@ -15,11 +15,11 @@ export const ItemCount = ({item, stock, cantidad, initial, onAdd,onIncrement, on
     return (
         <div className="countContainer">
             <div className="countBottom">
-                <button onClick={()=>onRemove({cantidad,stock})}>-</button>
+                <button onClick={() => onRemove({ cantidad, stock })}>-</button>
                 <span>{cantidad}</span>
-                <button onClick={()=>onIncrement({cantidad,stock})}>+</button>
+                <button onClick={() => onIncrement({ cantidad, stock })}>+</button>
             </div>
-            <button className="counterButton" onClick={()=>onAdd({item, cantidad})}>Agregar al carrito</button>
+            <button className="counterButton" onClick={() => onAdd({ item, cantidad })}>Agregar al carrito</button>
         </div>
     );
 

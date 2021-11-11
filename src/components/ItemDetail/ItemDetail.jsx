@@ -4,9 +4,9 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/cartContext";
 
-export const ItemDetail = ({producto}) => {
-    const {addItem} = useCart();
-    
+export const ItemDetail = ({ producto }) => {
+    const { addItem } = useCart();
+
 
     //Logica de ItemCount 
 
@@ -22,10 +22,10 @@ export const ItemDetail = ({producto}) => {
     }
 
     //valido que sea menor a stock para sumar   
-    const onIncrement = ({cantidad, stock}) => { if (cantidad < stock) setCantidad(cantidad + 1); }
+    const onIncrement = ({ cantidad, stock }) => { if (cantidad < stock) setCantidad(cantidad + 1); }
 
     //valido que el nro no sea menor a uno, ya que no se puede comprar menos de un producto
-    const onRemove = ({cantidad}) => { if (cantidad > 1) setCantidad(cantidad - 1); }
+    const onRemove = ({ cantidad }) => { if (cantidad > 1) setCantidad(cantidad - 1); }
 
 
 

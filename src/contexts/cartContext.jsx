@@ -28,8 +28,8 @@ export const CartProvider = ({ children }) => {
         } else {
             //si existe lo reemplazo sumandole la cantidad
             ///genero un carrito temporal, al que le reemplazo el elemento a modificar
-            const cartModificado= cart;
-            cartModificado[index].cantidad=cartModificado[index].cantidad+cantidad;
+            const cartModificado = cart;
+            cartModificado[index].cantidad = cartModificado[index].cantidad + cantidad;
             setCart(cartModificado);
         }
 
@@ -39,9 +39,9 @@ export const CartProvider = ({ children }) => {
     const removeItem = (id) => {
         ///busco el indice donde el id coincida con el del param, y lo elimino
         const index = cart.findIndex(prod => prod.id === id);
-        if (index !== -1){
-        ///genero un carrito temporal, al que le elimino el valor seleccionado
-            const cartModificado= cart;
+        if (index !== -1) {
+            ///genero un carrito temporal, al que le elimino el valor seleccionado
+            const cartModificado = cart;
             cartModificado.splice(index, 1)
             setCart(cartModificado);
         }
