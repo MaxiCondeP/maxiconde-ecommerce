@@ -22,12 +22,25 @@ export const ItemDetail = ({ producto }) => {
     }
 
     //valido que sea menor a stock para sumar   
-    const onIncrement = ({ cantidad, stock }) => { if (cantidad < stock) setCantidad(cantidad + 1); }
+    const onIncrement = ({ cantidad, item }) => { if (cantidad < item.stock) setCantidad(cantidad + 1); }
 
     //valido que el nro no sea menor a uno, ya que no se puede comprar menos de un producto
     const onRemove = ({ cantidad }) => { if (cantidad > 1) setCantidad(cantidad - 1); }
 
 
+
+    ////Si no hay stock, renderizo un msj, sino el itemcount para agregar productos
+    const ComponenteAgregar=()=>{
+        if(producto.stock<1){
+            return(
+                <h1>SIN STOCK</h1>
+            );
+            }else{
+            return(
+                <ItemCount stock={producto.stock} initial="1" item={producto} cantidad={cantidad} onAdd={onAdd} onIncrement={onIncrement} onRemove={onRemove} />
+            );
+        }
+    }
 
 
 
@@ -45,8 +58,8 @@ export const ItemDetail = ({ producto }) => {
                 {isOnCart ?
                     <Link to="/cart">
                         <button>Finalizar compra</button>
-                    </Link> :
-                    <ItemCount stock={producto.stock} initial="1" item={producto} cantidad={cantidad} onAdd={onAdd} onIncrement={onIncrement} onRemove={onRemove} />}
+                    </Link> :<ComponenteAgregar/>
+                    }
             </div>
         </div>
     )

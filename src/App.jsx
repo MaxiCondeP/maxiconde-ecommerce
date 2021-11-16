@@ -4,6 +4,10 @@ import { ItemDetailCointainer } from './components/ItemDetailContainer/ItemDetai
 import { Navbar } from './components/Navbar/Navbar'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { CartProvider } from "../src/contexts/cartContext"
+import { Cart } from './components/Cart/Cart';
+// import { getFirestore } from "./firebase";
+// import {collection} from "./Firebase/firestore"
+
 
 
 
@@ -34,6 +38,11 @@ function App() {
               {/* Le paso el param del id a mostrar*/}
               <ItemDetailCointainer />
             </Route>
+
+            <Route exact path="/cart">
+              <Cart/>
+            </Route>
+
 
           </Switch>
         </BrowserRouter>

@@ -1,15 +1,28 @@
 import cart from './cart.svg' ;
 import './CartWidget.css'
+import { useCart } from '../../contexts/cartContext';
 
 export const CartWidget= () =>{
+
+    const{cartCounter}= useCart();
+
+
+    if(cartCounter){
+        return(
+            <div className="iconoCartContainer">
+                <img className="iconoCart" src= {cart} alt="Ícono carrito"/>
+                <p className="textCart">{cartCounter}</p>
+            
+            </div>
+        )
+
+    }else{
+        return(
+            <div></div>
+        )
+    }
     
-    return(
-        <div className="iconoCartContainer">
-            <img className="iconoCart" src= {cart} alt="Ícono carrito"/>
-            <p className="textCart">0</p>
-        
-        </div>
-    )
+
 }
 
 export default CartWidget;

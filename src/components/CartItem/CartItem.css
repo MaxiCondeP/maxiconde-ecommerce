@@ -1,0 +1,26 @@
+.cartItem{
+    padding: 1rem;
+    margin: 1rem; 
+    border: solid white 0.20rem; 
+    display: grid;
+    flex-direction: row;
+    height: 100%;
+    grid-template-columns: 33% 33% 33%;
+    overflow:hidden;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.imgCartItem{
+    width: 100%;
+}
+
+.imgCartItem img{
+    width: 70%;
+}
+
+.btnEliminar{
+    width: 3rem;
+    height: 3rem;
+}
