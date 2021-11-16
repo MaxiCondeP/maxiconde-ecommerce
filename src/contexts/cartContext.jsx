@@ -22,7 +22,10 @@ export const CartProvider = ({ children }) => {
         if (index === -1) {
             //creo el obrjeto a agregar 
                 //calculo el monto del item         
-            const nuevoItem = { ...item, cantidad: cantidad, monto: monto }
+            const nuevoItem = { ...item, 
+                stock : parseInt(item.stock)-cantidad,
+                cantidad: cantidad, 
+                monto: monto }
             item.stock=item.stock-cantidad;
             setCart([...cart, nuevoItem]);
         } else {
@@ -34,7 +37,7 @@ export const CartProvider = ({ children }) => {
             item.stock=item.stock-cantidad;
             setCart(cartModificado);
         }
-        console.log(`Agregaste el item ${item.id} quedan ${item.stock}`)
+        console.log(`Agregaste el item ${item.id} quedan ${item.stock} `)
 
 
     }
@@ -47,10 +50,10 @@ export const CartProvider = ({ children }) => {
             ///genero un carrito temporal, al que le elimino el valor seleccionado
             const cartModificado = cart;
             cartModificado.splice(index, 1);
-            console.log(`Eliminaste el item ${item.id} quedan ${item.stock}`);
             setCart(cartModificado);
-            
         }
+        console.log(`Eliminaste el item ${item.id} quedan ${item.stock}`);
+            
     }
 
 

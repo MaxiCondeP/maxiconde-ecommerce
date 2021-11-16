@@ -37,7 +37,10 @@ export const ItemDetail = ({ producto }) => {
             );
             }else{
             return(
+                <>
                 <ItemCount stock={producto.stock} initial="1" item={producto} cantidad={cantidad} onAdd={onAdd} onIncrement={onIncrement} onRemove={onRemove} />
+                <p>Stock: {producto.stock}</p>
+                 </>
             );
         }
     }
