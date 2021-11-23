@@ -32,7 +32,7 @@ export const ItemList = () => {
     useEffect(() => {
         const db = getFirestore();
         
-        var q=query(collection(db, "Items"))
+        let q=query(collection(db, "Items"))
 
         if(categoria !== undefined){
             q = query(collection(db, "Items"), where("categoria", "==", categoria));
@@ -42,11 +42,9 @@ export const ItemList = () => {
           //   where("categoria", "==", {categoria})));
         
         getDocs(q).then((snapshot) => {
-            console.log(snapshot)
             setProductos(
                 snapshot.docs.map((doc) => {
                     const newDoc = { ...doc.data(), id: doc.id };
-                    console.log(newDoc);
                     return newDoc;
                 })
               

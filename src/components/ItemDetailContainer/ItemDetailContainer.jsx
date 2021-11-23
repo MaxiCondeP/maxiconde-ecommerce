@@ -27,13 +27,14 @@ export const ItemDetailCointainer = () => {
       useEffect(() => {
                const db = getFirestore();
 
-    const itemRef = doc(db, "Items", id);
+    const itemRef = doc(db, "Items",id);
      getDoc(itemRef).then((snapshot) => {
        if (snapshot.exists()) {
-         setProducto(snapshot.data());
+        const newDoc = { ...snapshot.data(), id: id };
+         setProducto(newDoc);
        }
+      
      });
-
       }, [id]);
 
 

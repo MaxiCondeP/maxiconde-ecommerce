@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar/Navbar'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { CartProvider } from "../src/contexts/cartContext"
 import { Cart } from './components/Cart/Cart';
+import { CartFormContainer } from './components/CartFormContainer/CartFormContainer';
 // import { getFirestore } from "./firebase";
 // import {collection} from "./Firebase/firestore"
 
@@ -41,6 +42,10 @@ function App() {
 
             <Route exact path="/cart">
               <Cart/>
+            </Route>
+
+            <Route exact path="/checkout">
+              <CartFormContainer/>
             </Route>
 
 

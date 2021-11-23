@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { getFirestore, collection, addDoc } from "@firebase/firestore";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 const cartContext = createContext();
@@ -8,8 +9,23 @@ export const useCart = () => useContext(cartContext);
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const[total, setTotal]= useState(0);
+    const[costumer, setCostumer]=useState([]);
     console.log(cart);
 
+
+///uso el use effect, con el state de total, para que me lo actualice en cada modificacion, y ademas
+/// me actualiza todo el cart ante cualquier modificación.
+
+    useEffect(()=>{
+        let tot = 0;
+        for (let i = 0; i < cart.length; i++) {
+            tot += cart[i].monto;
+        }
+
+        setTotal(tot);
+        
+    },[cart]);
 
     ///funcion que agrega item al carrito, o suma cantidad en caso de existir
     const addItem = ({ item, cantidad }) => {
@@ -28,6 +44,7 @@ export const CartProvider = ({ children }) => {
                 monto: monto }
             item.stock=item.stock-cantidad;
             setCart([...cart, nuevoItem]);
+            setTotal(totalCart());
         } else {
             //si existe lo reemplazo sumandole la cantidad, y el nuevo monto
             ///genero un carrito temporal, al que le reemplazo el elemento a modificar
@@ -36,6 +53,7 @@ export const CartProvider = ({ children }) => {
             cartModificado[index].monto = cartModificado[index].monto + monto;
             item.stock=item.stock-cantidad;
             setCart(cartModificado);
+            setTotal(totalCart());
         }
         console.log(`Agregaste el item ${item.id} quedan ${item.stock} `)
 
@@ -50,7 +68,9 @@ export const CartProvider = ({ children }) => {
             ///genero un carrito temporal, al que le elimino el valor seleccionado
             const cartModificado = cart;
             cartModificado.splice(index, 1);
+            item.stock=5;
             setCart(cartModificado);
+            setTotal(totalCart());
         }
         console.log(`Eliminaste el item ${item.id} quedan ${item.stock}`);
             
@@ -85,17 +105,41 @@ export const CartProvider = ({ children }) => {
 
     ///sumo el total del carrito
     const totalCart=()=>{
-        let total = 0;
+        let tot = 0;
         for (let i = 0; i < cart.length; i++) {
-            total += cart[i].monto;
+            tot += cart[i].monto;
         }
-        return total;
 
+        return(tot);
+    }
+
+    ///guardo el buyer en base a lo cargado en el formulario
+    const saveCostumer=(formInfo)=>{
+        setCostumer(formInfo);
+    }
+    
+
+    ///guardo la orden en la db
+    const sendOrder=()=>{
+
+        //creo el objeto
+        const order={
+            buyer: costumer,
+            items: cart,    
+            total: totalCart()
+        };
+
+        //traigo la db
+        const db=getFirestore();
+        //traigo la coleccion
+        const ordersCollection = collection(db, "orders");
+        //agrego el objeto a la colección
+        addDoc(ordersCollection, order)
     }
 
 
     return (
-        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cartCounter(), totalCart: totalCart()}}>
+        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cartCounter(), totalCart: total, costumer, saveCostumer, sendOrder}}>
             {children}
 
 
