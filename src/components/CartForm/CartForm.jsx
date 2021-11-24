@@ -18,9 +18,8 @@ const inputs = [
     }
 ]
 
-export const CartForm = ({ createCostumer, sendOrder}) => {
+export const CartForm = ({sendOrder}) => {
 
-    ;
 
     ///creo estados para controlar el formulario
     const [formFields, setFormFields] = useState({
@@ -37,8 +36,7 @@ export const CartForm = ({ createCostumer, sendOrder}) => {
 
     ///evento okclick de envio de orden.
     function onSubmit(event) {
-        createCostumer(formFields.name,formFields.phone, formFields.email);///creo el usr y lo guardo en el context
-        sendOrder();///llamo a la funcion para grabar en la db
+        sendOrder(formFields.name,formFields.phone, formFields.email);///llamo a la funcion para grabar en la db
         console.log(
           `Usuario ${formFields.name}creado`);
 

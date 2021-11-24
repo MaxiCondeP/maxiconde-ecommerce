@@ -1,4 +1,3 @@
-import { getFirestore, collection, addDoc } from "@firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 
@@ -10,7 +9,6 @@ export const useCart = () => useContext(cartContext);
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const[total, setTotal]= useState(0);
-    const[costumer, setCostumer]=useState([]);
     console.log(cart);
 
 
@@ -113,33 +111,13 @@ export const CartProvider = ({ children }) => {
         return(tot);
     }
 
-    ///guardo el buyer en base a lo cargado en el formulario
-    const saveCostumer=(formInfo)=>{
-        setCostumer(formInfo);
-    }
-    
 
-    ///guardo la orden en la db
-    const sendOrder=()=>{
 
-        //creo el objeto
-        const order={
-            buyer: costumer,
-            items: cart,    
-            total: totalCart()
-        };
 
-        //traigo la db
-        const db=getFirestore();
-        //traigo la coleccion
-        const ordersCollection = collection(db, "orders");
-        //agrego el objeto a la colección
-        addDoc(ordersCollection, order)
-    }
 
 
     return (
-        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cartCounter(), totalCart: total, costumer, saveCostumer, sendOrder}}>
+        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cartCounter(), totalCart: total}}>
             {children}
 
 
