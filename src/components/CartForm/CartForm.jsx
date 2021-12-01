@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 
+
 ///creo el array con los inputs a mapear en el formulario
 const inputs = [
     {
@@ -19,6 +20,7 @@ const inputs = [
 ]
 
 export const CartForm = ({sendOrder}) => {
+    
 
 
     ///creo estados para controlar el formulario
@@ -38,7 +40,7 @@ export const CartForm = ({sendOrder}) => {
     function onSubmit(event) {
         sendOrder(formFields.name,formFields.phone, formFields.email);///llamo a la funcion para grabar en la db
         console.log(
-          `Usuario ${formFields.name}creado`);
+          `Usuario ${formFields.name} creado`);
 
       }
 
@@ -62,9 +64,11 @@ export const CartForm = ({sendOrder}) => {
             ))}
 
             {/* valido que el boton este desabilitado si algun campo esta vacio */}
+           
             <button disabled={!(formFields.name && formFields.phone && formFields.email)}
             onClick={onSubmit}>
             Enviar Orden</button>
+           
         </div>
     );
 

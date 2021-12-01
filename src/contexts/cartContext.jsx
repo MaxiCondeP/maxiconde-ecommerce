@@ -9,10 +9,11 @@ export const useCart = () => useContext(cartContext);
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const[total, setTotal]= useState(0);
+    const[cant, setCant]= useState(0);
     console.log(cart);
 
 
-///uso el use effect, con el state de total, para que me lo actualice en cada modificacion, y ademas
+///uso el use effect, con el state de total, para que me lo calcule en cada modificacion, y ademas
 /// me actualiza todo el cart ante cualquier modificación.
 
     useEffect(()=>{
@@ -22,6 +23,12 @@ export const CartProvider = ({ children }) => {
         }
 
         setTotal(tot);
+
+        let q = 0;
+        for (let i = 0; i < cart.length; i++) {
+            q += cart[i].cantidad;
+        }
+        setCant(q);
         
     },[cart]);
 
@@ -43,15 +50,17 @@ export const CartProvider = ({ children }) => {
             item.stock=item.stock-cantidad;
             setCart([...cart, nuevoItem]);
             setTotal(totalCart());
+            setCant(cartCounter());
         } else {
             //si existe lo reemplazo sumandole la cantidad, y el nuevo monto
             ///genero un carrito temporal, al que le reemplazo el elemento a modificar
             const cartModificado = cart;
             cartModificado[index].cantidad = cartModificado[index].cantidad + cantidad;
             cartModificado[index].monto = cartModificado[index].monto + monto;
-            item.stock=item.stock-cantidad;
+            cartModificado[index].stock=cartModificado[index].stock-cantidad;
             setCart(cartModificado);
             setTotal(totalCart());
+            setCant(cartCounter());
         }
         console.log(`Agregaste el item ${item.id} quedan ${item.stock} `)
 
@@ -69,6 +78,7 @@ export const CartProvider = ({ children }) => {
             item.stock=5;
             setCart(cartModificado);
             setTotal(totalCart());
+            setCant(cartCounter());
         }
         console.log(`Eliminaste el item ${item.id} quedan ${item.stock}`);
             
@@ -80,12 +90,14 @@ export const CartProvider = ({ children }) => {
         setCart([]);
     }
 
+
+    //chequeo si esta cargado el item en el carrito, de ser así devuelve el stock restante, caso contrario devuelve -1
     const isInCart = (id) => {
         const index = cart.findIndex(prod => prod.id === id);
         if (index !== -1)
-            return true;
+            return cart[index].stock;
         else
-            return false;
+            return -1;
     }
 
     
@@ -114,10 +126,8 @@ export const CartProvider = ({ children }) => {
 
 
 
-
-
     return (
-        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cartCounter(), totalCart: total}}>
+        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cant, totalCart: total}}>
             {children}
 
 
@@ -126,7 +136,7 @@ export const CartProvider = ({ children }) => {
     );
 }
 
-
+ 
 
 
 

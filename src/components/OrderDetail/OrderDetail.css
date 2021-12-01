@@ -1,0 +1,68 @@
+.orderDetailContainer{
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+    margin: 2rem;
+    padding:1rem;
+    color: black;
+
+
+}
+.detailHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid gray 0.15rem;
+    padding:1rem; 
+    padding-bottom: 3rem;
+
+}
+.rightHeader{
+    text-align: right;
+    color: gray; 
+    padding:0;    
+}
+
+.rightHeader p{
+    font-size: 0.8rem;
+    padding:0;
+}
+
+.detailHeader h1{
+    font-size: 2rem;
+    color: gray; 
+    
+}
+
+.buyerDetail{
+    text-align: left;
+    color: black; 
+    /* border-bottom: solid 0.015rem gray;
+    border-right: solid 0.015rem gray; */
+    box-shadow:  0.2rem 0.2rem rgb(190, 189, 189) ;
+    padding: 1rem
+}
+
+.orderItem{
+    padding:0 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.detailFooter{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    border-top: solid gray 0.15rem;
+    padding: 0 2rem 
+}
+
+
+

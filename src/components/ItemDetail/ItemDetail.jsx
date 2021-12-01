@@ -25,7 +25,7 @@ export const ItemDetail = ({ producto }) => {
     const onIncrement = ({ cantidad, item }) => { if (cantidad < item.stock) setCantidad(cantidad + 1); }
 
     //valido que el nro no sea menor a uno, ya que no se puede comprar menos de un producto
-    const onRemove = ({ cantidad }) => { if (cantidad > 1) setCantidad(cantidad - 1); }
+    const onRemove = ({ cantidad}) => { if (cantidad > 1) setCantidad(cantidad - 1); }
 
 
 
@@ -38,8 +38,7 @@ export const ItemDetail = ({ producto }) => {
             }else{
             return(
                 <>
-                <ItemCount stock={producto.stock} initial="1" item={producto} cantidad={cantidad} onAdd={onAdd} onIncrement={onIncrement} onRemove={onRemove} />
-                <p>Stock: {producto.stock}</p>
+                <ItemCount stock={producto.stock} initial="1" item={producto} cantidad={cantidad} buttonText="Agregar al carrito" onAdd={onAdd} onIncrement={onIncrement} onRemove={onRemove} />
                  </>
             );
         }

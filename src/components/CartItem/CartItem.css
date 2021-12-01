@@ -5,7 +5,7 @@
     display: grid;
     flex-direction: row;
     height: 100%;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 35% 25% 25% 5%;
     overflow:hidden;
     justify-items: center;
     align-items: center;
@@ -21,6 +21,6 @@
 }
 
 .btnEliminar{
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
 }

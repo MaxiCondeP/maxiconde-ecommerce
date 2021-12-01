@@ -9,10 +9,8 @@ import { useState, useEffect } from "react";
 
 export const Cart = () => {
 
-    const { cart, cartLength, totalCart, removeItem} = useCart();
+    const { cart, cartLength, totalCart, removeItem, addItem} = useCart();
     const [length, setLength]= useState(0);
-    console.log(`length: ${cartLength}`)
-    // const [updateFlag, setUpdateFlag]= useState(true);
 
      useEffect(()=>{
         
@@ -21,20 +19,20 @@ export const Cart = () => {
         }
     
     },[length,cartLength]);
+    
 
 
 
 
 
     const Componente = () => {
-        console.log(cartLength);
-
+     
         if (cartLength>0) {
             return (
                 <>
                 <div>
                 {cart.map((item) => (
-                    <CartItem item={item} key={item.id} removeItem={removeItem} />))}
+                    <CartItem item={item} key={item.id} removeItem={removeItem} addItem={addItem} />))}
                     <h2>Total {totalCart}</h2>
                 </div>
                 <Link to="/checkout">

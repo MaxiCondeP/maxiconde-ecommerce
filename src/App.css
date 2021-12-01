@@ -2,8 +2,9 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-image: url("./fondo.jpg");
-  background-size: cover;
+  width: 90%;
+  padding: 1rem;
+  color: white;
 
  
 }
@@ -12,7 +13,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #884EA0 ;  */
-  width: 100%;
+  width:100%;
 }
 
