@@ -1,0 +1,23 @@
+.modalContainer{
+    
+    flex-direction: column;
+    position:absolute;
+    top:5rem;
+    right:0;
+    margin:1rem;
+    background-color: black;
+    width: 60%;
+    font-size: 0.9rem;
+
+
+}
+.modalContainer img{
+    width: 4rem;
+}
+
+.modalContainer  .cartItem{
+    padding:0;
+    overflow: hidden;
+    height: 100%;
+
+}

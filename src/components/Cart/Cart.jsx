@@ -3,7 +3,7 @@ import { useCart } from "../../contexts/cartContext";
 import { Link } from "react-router-dom";
 import "./Cart.css";
 import { useState, useEffect } from "react";
-//import { useState,useEffect } from "react";
+
 
 
 

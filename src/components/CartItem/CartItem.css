@@ -5,10 +5,11 @@
     display: grid;
     flex-direction: row;
     height: 100%;
-    grid-template-columns: 35% 25% 25% 5%;
+    grid-template-columns: 20% 40% 15% 15%;
     overflow:hidden;
     justify-items: center;
     align-items: center;
+    
     
 }
 
