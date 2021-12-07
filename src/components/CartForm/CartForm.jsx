@@ -7,15 +7,23 @@ import { useState } from "react";
 const inputs = [
     {
         label: "Nombre",
-        name: "name"
+        name: "name",
+        type: "text"
     },
     {
         label: "Celular",
-        name: "phone"
+        name: "phone",
+        type: "phone"
     },
     {
         label: "Email",
-        name: "email"
+        name: "email",
+        type: "email"
+    },
+    {
+        label: "Confirma tu email",
+        name: "email2",
+        type: "email"
     }
 ]
 
@@ -27,7 +35,8 @@ export const CartForm = ({sendOrder}) => {
     const [formFields, setFormFields] = useState({
         name: "",
         phone: "",
-        email: ""
+        email: "",
+        email2: ""
     });
 
     ///manejo de los eventos de cada input, guardando el estado en cada cambio
@@ -53,19 +62,19 @@ export const CartForm = ({sendOrder}) => {
             {/* mapeo los campos que tengo en el array */}
             {inputs.map((input) => (
                 <div key={input.name} >
-                    <label >{input.label}</label>
+                    <label >{input.label}:  </label>
                     <input
                         value={formFields[input.name]}
                         name={input.name}
-                        type="text"
+                        type={input.type}
                         onChange={handleChange}
                     />
                 </div>
             ))}
 
-            {/* valido que el boton este desabilitado si algun campo esta vacio */}
+            {/* valido que el boton este desabilitado si algun campo esta vacio, o si mail y confirmacion no coinciden*/}
            
-            <button disabled={!(formFields.name && formFields.phone && formFields.email)}
+            <button disabled={(!(formFields.name && formFields.phone && formFields.email&& formFields.email2))||(formFields.email!==formFields.email2)}
             onClick={onSubmit}>
             Enviar Orden</button>
            

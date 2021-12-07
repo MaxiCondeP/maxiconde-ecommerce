@@ -1,6 +1,6 @@
 import "./OrderDetail.css"
 
-export const OrderDetail=({items, buyer, date,total, parseDate})=>{
+export const OrderDetail=({id, items, buyer, date,total, parseDate})=>{
     
  
 
@@ -12,6 +12,7 @@ export const OrderDetail=({items, buyer, date,total, parseDate})=>{
             
             <div className="detailHeader">
                 <div className="buyerDetail">
+                    <p>Orden: {id}</p>
                     <p>Datos del comprador: </p>
                     <p>-{buyer.name}</p>
                     <p>-{buyer.phone}</p>
@@ -20,7 +21,7 @@ export const OrderDetail=({items, buyer, date,total, parseDate})=>{
                 {/* Posiblemente pase a ser un logo */}
                 <div className="rightHeader">
                 <p>{parseDate(date.toDate())}</p>
-                <h1>VINTAGE MUSIC STORE</h1>
+                <img className="logoGris" src="https://i.ibb.co/ZLfSYwp/logo-gray.png" alt="logo" />
                 </div>
             </div>
             <div className="orderList">

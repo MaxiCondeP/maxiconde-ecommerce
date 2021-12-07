@@ -6,6 +6,8 @@
     width: 18rem;
     padding:0.5rem;
     color: white;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
 }
 
 

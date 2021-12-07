@@ -1,6 +1,16 @@
 .itemList{
-    display: grid;
-    padding: 5%; 
-    grid-template-columns: 30% 30% 30%;
+    display: grid; 
+    padding: 3%; 
+    padding-top:2rem;  
     width: 90%;
+    grid-auto-flow: dense;/*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
+    grid-template-columns: repeat(auto-fill , minmax(20rem, 1fr));/*Me genera cant de columnas acorde a tamaño de pantalla*/    
+}
+
+
+.tituloCategoria{
+    text-align: left;
+    padding-left:2rem;
+    text-transform: capitalize;
+    font-size: 2rem;
 }

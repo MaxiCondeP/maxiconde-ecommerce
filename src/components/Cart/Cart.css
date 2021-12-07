@@ -3,4 +3,6 @@
     margin: 2rem; 
     padding:1rem; 
     border: solid white 0.25rem; 
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);    
 }

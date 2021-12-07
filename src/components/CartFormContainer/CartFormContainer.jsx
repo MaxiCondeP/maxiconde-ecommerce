@@ -3,6 +3,7 @@ import { CartForm } from "../CartForm/CartForm";
 import { getFirestore, collection, addDoc, doc,updateDoc } from "@firebase/firestore";
 import { useState } from "react";
 import { OrderDetailContainer } from "../OrderDetailContainer/OrderDetailContainer";
+import "./CartFormContainer.css"
 
 
 export const CartFormContainer = () => {
@@ -65,14 +66,15 @@ export const CartFormContainer = () => {
 
     return (
         
-         <>
+        <div className="cartFormContainer">
+            
             {sent ?
                 <>
                  <h1>Orden finalizada! Gracias por tu compra</h1> 
                  <OrderDetailContainer orderId={orderId}/> 
                  </>:
-                 (<CartForm sendOrder={sendOrder} cart={cart} />)}
-         </>
+                 (<> <h2>Completá los datos de la orden: </h2> <CartForm sendOrder={sendOrder} cart={cart} /></>)}
+        </div>
     );
 
 

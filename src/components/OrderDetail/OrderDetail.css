@@ -29,6 +29,11 @@
     padding:0;
 }
 
+.logoGris{
+    width: 70%;
+
+}
+
 .detailHeader h1{
     font-size: 2rem;
     color: gray; 

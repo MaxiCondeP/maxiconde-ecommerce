@@ -1,0 +1,9 @@
+.cartFormContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 25% 2rem 25%;
+    padding: 2rem;
+    border: solid 0.2rem;
+    width: 50%;
+    text-align: end;
+}

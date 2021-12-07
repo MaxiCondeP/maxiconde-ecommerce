@@ -25,3 +25,26 @@
     width: 2rem;
     height: 2rem;
 }
+
+
+
+@media only screen and (max-width: 960px) {
+  .cartItem{
+        height: 50%;
+    }
+
+    .cartItem   .countContainer{
+        height: 50%;
+        display:flex;
+      
+        flex-direction: column;
+    }
+
+    .cartItem .counterButton{
+        width: 5rem;
+        height: 1.2rem;
+    }
+    
+    
+
+}

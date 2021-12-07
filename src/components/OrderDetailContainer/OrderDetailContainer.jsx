@@ -31,21 +31,6 @@ export const OrderDetailContainer = ({ orderId }) => {
 
 
 
-    // ///Traigo la orden de la db, una vez creada
-    // const getOrderDB=(orderId)=>{
-    //     const db = getFirestore();
-    //     const itemRef = doc(db, "orders", orderId);
-    //     getDoc(itemRef).then((snapshot) => {
-    //       if (snapshot.exists()) {
-    //         const newDoc = { ...snapshot.data(), id: orderId };
-    //         setOrder(newDoc);
-    //         console.log(order);
-
-    //       }
-
-    //    });
-    // }
-
     //parseo la fecha de la  orden a string
     const saveDate = (fecha) => {
         if (fecha !== undefined) {
@@ -67,7 +52,7 @@ export const OrderDetailContainer = ({ orderId }) => {
     return (
         <>
             {order ?
-                (<OrderDetail items={order.items} buyer={order.buyer} total={order.total} date={order.date} parseDate={saveDate} />)
+                (<OrderDetail id={order.id} items={order.items} buyer={order.buyer} total={order.total} date={order.date} parseDate={saveDate} />)
                 : <p>No hay orden generada</p>}
         </>
     );

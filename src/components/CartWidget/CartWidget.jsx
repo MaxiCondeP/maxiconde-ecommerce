@@ -18,23 +18,7 @@ export const CartWidget= () =>{
     }
 
 
-    // if(cartCounter){
-    //     return(
-           
-    //         <div className="iconoCartContainer" onClick={()=>letVisible()}>
-                
-    //             <img className="iconoCart" src= {cart} alt="Ícono carrito"/>
-    //             <p className="textCart">{cartCounter}</p>
-                
-    //         </div>
-           
-    //     )
 
-    // }else{
-    //     return(
-    //         <div></div>
-    //     )
-    // }
 
     return(
         <>
@@ -42,7 +26,8 @@ export const CartWidget= () =>{
         ( <> <div className="iconoCartContainer" onClick={()=>letVisible()}>
                 
                 <img className="iconoCart" src= {cart} alt="Ícono carrito"/>
-                <p className="textCart">{cartCounter}</p>
+                <div className="textCart">{cartCounter}</div>
+               
                 
             </div>
              {visible?

@@ -19,7 +19,7 @@ export const CartModal=({letVisible}) =>{
                 )) : "Cargando..."}
 
         <Link to="/cart">
-            <button onClick={()=>letVisible()}>Ir al carrito</button>
+            <button className="modalBtn" onClick={()=>letVisible()}>Ir al carrito</button>
         </Link>
         </div>
     );

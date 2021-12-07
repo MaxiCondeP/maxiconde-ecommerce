@@ -1,16 +1,27 @@
 .iconoCartContainer{
     display: flex;
     flex-direction: row;
-
 }
 
 
 .iconoCart{
     width: 2rem;
     cursor: pointer;
+    margin:0;
+    padding:0
 }
 
 .textCart{
-    color: #884EA0;
+    color: white;
     font-weight: bold;
-}
+    border: solid 1px;
+    border-radius: 10rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: 1.2rem;
+    text-align: center;
+} 
+

@@ -10,10 +10,13 @@ import { useCart } from "../../contexts/cartContext";
 export const ItemDetailCointainer = () => {
 
   const [producto, setProducto] = useState();
+  const [text, setText]=useState("Cargando...");
   const [stock, setStock] = useState();
+
   const {isInCart}=useCart();
 
   const { id } = useParams();
+ 
 
 
 
@@ -28,7 +31,11 @@ export const ItemDetailCointainer = () => {
           newDoc.stock= stock;
         }
         setProducto(newDoc);
+        setText("Cargando...");
+      }else{
+        setText("El producto no existe");
       }
+      
 
     });
   }, [id, stock, isInCart]);
@@ -43,7 +50,7 @@ export const ItemDetailCointainer = () => {
     <div className="itemDetailContainer">
       {producto
         ? (<ItemDetail producto={producto} key={producto.id} />
-        ) : "Cargando..."}
+        ) : text}
     </div>
   );
 

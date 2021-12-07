@@ -1,6 +1,5 @@
 .itemDetail{
     display:grid;
-    width: 100%;
     grid-template-columns: 40% 60%;
     border: solid white 2px;
     padding: 2rem;

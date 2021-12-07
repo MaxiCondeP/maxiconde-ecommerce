@@ -1,0 +1,12 @@
+.dropDown{
+    display:flex;
+    flex-direction: column;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px); 
+
+
+}
+
+.dropDown li{
+    color: white;
+}

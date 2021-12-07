@@ -33,7 +33,7 @@ export const Cart = () => {
                 <div>
                 {cart.map((item) => (
                     <CartItem item={item} key={item.id} removeItem={removeItem} addItem={addItem} />))}
-                    <h2>Total {totalCart}</h2>
+                    <h2>Total ${totalCart}</h2>
                 </div>
                 <Link to="/checkout">
                 <button>Finalizar orden</button>

@@ -1,6 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,200&display=swap');
+
+
 .App {
-  font-family: sans-serif;
+  font-family: 'Kanit', sans-serif;
   text-align: center;
   width: 90%;
   padding: 1rem;
