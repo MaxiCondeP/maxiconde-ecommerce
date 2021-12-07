@@ -1,5 +1,6 @@
 .itemDetailContainer{
     margin: 2rem; 
+    margin-top:0;
     width: 100%;
     background-color: #ffffff10;
     backdrop-filter: blur(12px);
