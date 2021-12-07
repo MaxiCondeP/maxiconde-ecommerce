@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 export const Cart = () => {
 
-    const { cart, cartLength, totalCart, removeItem, addItem} = useCart();
+    const { cart, cartLength, totalCart, removeItem, addItem, refreshItem} = useCart();
     const [length, setLength]= useState(0);
 
      useEffect(()=>{
@@ -30,9 +30,10 @@ export const Cart = () => {
         if (cartLength>0) {
             return (
                 <>
+                <h1>Carrito de compras: </h1>
                 <div>
                 {cart.map((item) => (
-                    <CartItem item={item} key={item.id} removeItem={removeItem} addItem={addItem} />))}
+                    <CartItem item={item} key={item.id} removeItem={removeItem} addItem={addItem} refreshItem={refreshItem} />))}
                     <h2>Total ${totalCart}</h2>
                 </div>
                 <Link to="/checkout">

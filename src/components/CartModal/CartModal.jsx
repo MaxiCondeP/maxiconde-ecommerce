@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./CartModal.css"
 
 export const CartModal=({letVisible}) =>{
-    const {cart, removeItem, addItem}=useCart();
+    const {cart, removeItem, addItem, refreshItem}=useCart();
   
 
 
@@ -15,7 +15,7 @@ export const CartModal=({letVisible}) =>{
 
         {cart.length?
         cart.map((producto) => (
-                    <CartItem item={producto} key={producto.id} removeItem={removeItem} addItem={addItem}/>
+                    <CartItem item={producto} key={producto.id} removeItem={removeItem} addItem={addItem} refreshItem={refreshItem}/>
                 )) : "Cargando..."}
 
         <Link to="/cart">

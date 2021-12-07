@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const[total, setTotal]= useState(0);
     const[cant, setCant]= useState(0);
-    console.log(cart);
+  
 
 
 ///uso el use effect, con el state de total, para que me lo calcule en cada modificacion, y ademas
@@ -62,8 +62,27 @@ export const CartProvider = ({ children }) => {
             setTotal(totalCart());
             setCant(cartCounter());
         }
-        console.log(`Agregaste el item ${item.id} quedan ${item.stock} `)
+        console.log(`Agregaste el item ${item.id} `)
 
+
+    }
+
+    //Actualizo cantidad de item segun modificacion en el cart
+
+ 
+    const refreshItem = ({item, cantidad})=>{
+        const index = cart.findIndex(prod => prod.id === item.id);
+        const monto=item.precio * cantidad;  
+        if(index !== -1){
+            const cartModificado = cart;
+            cartModificado[index].cantidad = cantidad;
+            cartModificado[index].monto =  monto;
+            cartModificado[index].stock=cartModificado[index].stock-(cartModificado[index].cantidad -cantidad);
+            setCart(cartModificado);
+            setTotal(totalCart());
+            setCant(cartCounter());
+            console.log(`Item ${item.id} actualizado`);
+        } 
 
     }
 
@@ -80,7 +99,7 @@ export const CartProvider = ({ children }) => {
             setTotal(totalCart());
             setCant(cartCounter());
         }
-        console.log(`Eliminaste el item ${item.id} quedan ${item.stock}`);
+        console.log(`Eliminaste el item ${item.id}`);
             
     }
 
@@ -127,7 +146,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <cartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, cartLength: cart.length , cartCounter: cant, totalCart: total}}>
+        <cartContext.Provider value={{ cart, addItem, removeItem, refreshItem, clear, isInCart, cartLength: cart.length , cartCounter: cant, totalCart: total}}>
             {children}
 
 

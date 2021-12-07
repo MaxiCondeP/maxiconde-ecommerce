@@ -10,10 +10,7 @@ import { Dropdown } from "../../Dropdown/Dropdown";
 export const Navbar = () => {
 
     const [dropD, setDropd] = useState(false);
-    console.log(`dropdown ${dropD}`);
-
-
-
+ 
     //Al pasar el mouse pongo visible el desplegable
     const mouseDrop = () => {
         setDropd(true);

@@ -9,7 +9,7 @@ export const CartWidget= () =>{
 
     const{cartCounter}= useCart();
     const [visible, setVisible]= useState(false);
-    console.log(visible);
+  
 
 
     const letVisible=()=>{

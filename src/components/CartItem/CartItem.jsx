@@ -5,7 +5,7 @@ import React, { useState} from "react";
 
 
 
-export const CartItem = ({ item, removeItem, addItem}) => {
+export const CartItem = ({ item, removeItem,addItem,refreshItem }) => {
     const [cantidad, setCantidad] = useState(item.cantidad);
     
 
@@ -29,11 +29,8 @@ export const CartItem = ({ item, removeItem, addItem}) => {
         }
     }
 
-    const onChangeQ=()=>{
-        removeItem(item);
-        addItem({item, cantidad});
-        
-       
+    const onChangeQ=()  =>{
+        refreshItem({item,cantidad});
     }
 
 
