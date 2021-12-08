@@ -3,6 +3,7 @@ import { getFirestore } from "firebase/firestore";
 
 
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyA8Eut11cS71yUUzQjN4AoGmEOI7t0zJfM",
     authDomain: "conde-eccomerce.firebaseapp.com",
